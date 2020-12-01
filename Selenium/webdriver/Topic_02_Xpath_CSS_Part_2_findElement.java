@@ -16,23 +16,26 @@ public class Topic_02_Xpath_CSS_Part_2_findElement {
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get("https://www.facebook.com/");
+		driver.get("http://live.demoguru99.com/");
 	}
 	@Test
 	public void TC_01_ValidateCurrentUrl() {
-		//inpput vào Email textbox
+		//inpput vao Email textbox
 		driver.findElement(By.tagName("input")).sendKeys("0389930640");
+		//findElement -> 1 element<webElement>
+		//1- Neu k tim thay element nao: danh fail testcase- throw ra 1 exception: nosuchElement
+		//neu nhu no tim thay nhieu hon 1 element thi no luon thao tac voi element dau tien
+	    // neu tim thay 1 element -> thao tac voi element do
 		
-		//find Element:
-		//Nếu như k tìm tháy element nào: đánh fail testcase- throw ra 1 exception: NosuchElement
-		//Nếu như tìm thấy 1 element- thao tác vs element đó
-		//Nếu như tìm tháy nhiều hon 1 element thì nó luon thao tác với element đầu tiên
-	
+		//findElements-> nhieu element list<WebElement>
+		//1. Neu nhu k tim thay element nao: khong danh fail TCs -> tra ve list rong
+		//2- neu tim thay 1 element-> tra ve 1 list chua 1 element nay
+		//3- neu tim thay nhieu hon 1-> tra ve list nhieu element
 		
 	}
 	@AfterClass
 	public void afterClass() {
-		driver.quit();
+		//driver.quit();
 	}
 		
 }

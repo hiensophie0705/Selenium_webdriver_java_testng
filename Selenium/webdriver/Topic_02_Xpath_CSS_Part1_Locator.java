@@ -9,14 +9,14 @@ public class Topic_02_Xpath_CSS_Part1_Locator {
 	WebDriver driver;
 	@Test 
 	public void TC_01() {
-		//1- Mở ra trình duyệt  FireFox
+		//1- Mo ra 1 trinh duyet Firefox
 		driver = new FirefoxDriver();
-		//2- Nhập vào app(facebook)
+		//2-Nhap vao app(facebook)
 		driver.get("https://www.facebook.com/");
-		//3- Nhập vào email textbox
-		//action: nhập/chọ/hover/drag+drop/get text/
-		// Tìm element: findElement
-		//Tìm elements : findElements
+		//3-Nhap vao email textbox
+		//action: Nhap/chọn/  hover/drag_drop/get text/...
+		// Tim element: findElement(so it)
+		//Tim elements : findElements(so nhieu) -> nhieu hon 1
 		//ID
 		driver.findElement(By.id("email")).sendKeys("0389930640");
 		// Class
@@ -29,7 +29,7 @@ public class Topic_02_Xpath_CSS_Part1_Locator {
 		//linktext (link -a)
 		driver.findElement(By.linkText("English (UK")).click();
 		//partial linktext( link-a)
-		driver.findElement(By.partialLinkText("Việt")).click();
+		driver.findElement(By.partialLinkText("Viá»‡t")).click();
 		//CSS
 		driver.findElement(By.cssSelector("#email")).sendKeys("dothihien070597@gmail.com");
 		driver.findElement(By.cssSelector("input[id='email']")).clear();
