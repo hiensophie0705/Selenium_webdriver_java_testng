@@ -35,7 +35,7 @@ public class Topic_02_Xpath_CSS_Part_2_findElement {
 	}
 	@AfterClass
 	public void afterClass() {
-		//driver.quit();
+	driver.quit();
 	}
 		
 }
