@@ -28,17 +28,17 @@ public class Topic_02_Xpath_Css_Part_3 {
 	public void TC_04_TagName() throws InterruptedException {
 		System.out.println();
 		System.out.println();
-		System.out.println("Tổn số lnk trên trang hiện tại =" + driver.findElement(By.tagName("a")));
+;;		System.out.println("Tá»•n sá»‘ lnk trÃªn trang hiá»‡n táº¡i =" + driver.findElement(By.tagName("a")));
 	}
 	public void TC_05_LinkText() throws InterruptedException{
-		//text của link tuyệt đối( toàn bộ chuỗi)
+		//text cá»§a link tuyá»‡t Ä‘á»‘i( toÃ n bá»™ chuá»—i)
 		driver.findElement(By.linkText("Forgot Your PassWord?"));
 		Thread.sleep(4000);
 	}
 	@Test
 	public void TC_06_Partial_LinkText() throws InterruptedException{
 		driver.get("https://login.ubuntu.com/");
-		//Text của link tương đối(1 phần chuỗi)
+		//Text của link tuyêt đối
 		driver.findElement(By.partialLinkText("Read")).click();
 	}
 	public void TC_07_Css_Selector() throws InterruptedException{
@@ -57,6 +57,5 @@ public class Topic_02_Xpath_Css_Part_3 {
 		driver.findElement(By.xpath("//form[@id='login-form']")).clear();
 	}
 	public void afterClass() {
-		
-}
+	}
 	

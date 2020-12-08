@@ -2,13 +2,13 @@ package javaForTest;
 
 public class Topic_01_Data_Type {
 	public static void main(String[] args) {
-		//Kiểu dữ liêu: data type
-		//1- Kiểu dữ liệu nguyên thuỷ(primitive)
+		//Kiá»ƒu dá»¯ liÃªu: data type
+		//1- Kiá»ƒu dá»¯ liá»‡u nguyÃªn thuá»·(primitive)
 		
-		//kí tự
+		//kÃ­ tá»±
         //char
 		 Char key = 'A';
-	    //Số nguyên: không có phần thập phân
+	    //Sá»‘ nguyÃªn: khÃ´ng cÃ³ pháº§n tháº­p phÃ¢n
 		//short
 		//byte
 		 byte 
@@ -16,16 +16,16 @@ public class Topic_01_Data_Type {
 		//int
 		//long
 		
-		//số thực: có phần thập phân
+		//sá»‘ thá»±c: cÃ³ pháº§n tháº­p phÃ¢n
 		//float
 		//double
 		
-		//boolean- 2 giá trị: true/false
-		//sex= true: nam; false: nữ
+		//boolean- 2 giÃ¡ trá»‹: true/false
+		//sex= true: nam; false: ná»¯
 		
-		//2- Kiểu dữ liệu tham chiếu(reference)
+		//2- Kiểu dữ lệu tham chiếu(reference)
 		//String
-		 String = '14fdfadf';
+		string = 'hien';
 		 
 		//Array
 		 String address[] = {"Ho Chi Minh","Ha Noi","Da Nang"};
@@ -36,7 +36,7 @@ public class Topic_01_Data_Type {
 		//Object
 		 Oject a = "Can tho";
 		 
-		//Collection(Set/List/Quêue)
+		//Collection(Set/List/QuÃªue)
          List<String> add = new  Array		 
 		
 	}
