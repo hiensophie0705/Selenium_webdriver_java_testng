@@ -57,5 +57,7 @@ public class Topic_02_Xpath_Css_Part_3 {
 		driver.findElement(By.xpath("//form[@id='login-form']")).clear();
 	}
 	public void afterClass() {
+		
+	}
 	}
 	

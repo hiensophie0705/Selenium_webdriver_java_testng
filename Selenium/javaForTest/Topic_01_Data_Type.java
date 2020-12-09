@@ -7,11 +7,11 @@ public class Topic_01_Data_Type {
 		
 		//kÃ­ tá»±
         //char
-		 Char key = 'A';
+		// Char key = 'A';
 	    //Sá»‘ nguyÃªn: khÃ´ng cÃ³ pháº§n tháº­p phÃ¢n
 		//short
 		//byte
-		 byte 
+		 //byte 
 		 
 		//int
 		//long
@@ -25,19 +25,18 @@ public class Topic_01_Data_Type {
 		
 		//2- Kiểu dữ lệu tham chiếu(reference)
 		//String
-		string = 'hien';
 		 
 		//Array
-		 String address[] = {"Ho Chi Minh","Ha Noi","Da Nang"};
-		 in numbers[] = {12, 25,32};
+		 //String address[] = {"Ho Chi Minh","Ha Noi","Da Nang"};
+		 //int numbers[] = {12, 25,32};
 		 //Class
-		 Topic_01_Data_Type topic01 =new Topic_01_Data_Type();
+		 //Topic_01_Data_Type topic01 =new Topic_01_Data_Type();
 		 
 		//Object
-		 Oject a = "Can tho";
+		 //Oject a = "Can tho";
 		 
 		//Collection(Set/List/QuÃªue)
-         List<String> add = new  Array		 
+         //List<String> add = new  Array		 
 		
 	}
 
