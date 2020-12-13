@@ -62,7 +62,6 @@ public class Topic_04_Excercise {
 		Assert.assertTrue(registerPageSource.contains("Create an Account"));	
 	}
 	
-	
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
