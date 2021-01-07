@@ -14,6 +14,18 @@ public class Topic_06_TextBox_TextArea {
 	WebDriver driver;
 	String email, userID, password, loginPageUrl;
 	String name, dobInput, dobOutput, address, city, state, pin, phone, mail;
+
+	By nameBy = By.name("name");
+	By dobBy = By.name("dob");
+	By addressBy = By.name("addr");
+	By cityBy = By.name("city");
+	By stateBy = By.name("state");
+	By pinBy = By.name("pinno");
+	By phoneBy = By.name("telephoneno");
+	By emailBy = By.name("emailid");
+	By passwordBy = By.name("password");
+	private String customerID;
+	
 	@BeforeClass
 	public void beforeClass() {
 		driver = new FirefoxDriver();
@@ -61,15 +73,15 @@ public class Topic_06_TextBox_TextArea {
 	public void TC_03_New_Customer() {
 		driver.findElement(By.xpath("//a[text()='New Customer']")).click();
 		//New
-		driver.findElement(By.name("name")).sendKeys(name);
-		driver.findElement(By.name("dob")).sendKeys(dobOutput);
-		driver.findElement(By.name("addr")).sendKeys(address);
-		driver.findElement(By.name("city")).sendKeys(city);
-		driver.findElement(By.name("state")).sendKeys(state);
-		driver.findElement(By.name("pinno")).sendKeys(pin);
-		driver.findElement(By.name("telephoneno")).sendKeys(phone);
-		driver.findElement(By.name("emailid")).sendKeys(mail);
-		driver.findElement(By.name("password")).sendKeys("123456");
+		driver.findElement(nameBy).sendKeys(name);
+		driver.findElement(dobBy).sendKeys(dobOutput);
+		driver.findElement(addressBy).sendKeys(address);
+		driver.findElement(cityBy).sendKeys(city);
+		driver.findElement(stateBy).sendKeys(state);
+		driver.findElement(pinBy).sendKeys(pin);
+		driver.findElement(phoneBy).sendKeys(phone);
+		driver.findElement(emailBy).sendKeys(mail);
+		driver.findElement(passwordBy).sendKeys("123456");
 		
 		driver.findElement(By.name("sub")).click();
 		
@@ -85,11 +97,29 @@ public class Topic_06_TextBox_TextArea {
 		Assert.assertEquals(driver.findElement(By.xpath("//td[text()='Mobile No.']/following-sibling::td")).getText(), "3123456788");
 		Assert.assertEquals(driver.findElement(By.xpath("//td[text()='Email']/following-sibling::td")).getText(), "donald@gitbub.io");
 		
-		
+		 customerID = driver.findElement(By.xpath("//td[text()='Customer ID)']/following-sibling::td")).getText();
 	}
 	
 	@Test
 	public void TC_04_Edit_Customer() {
+		driver.findElement(By.xpath("//a[text()='Edit Customer']")).click();
+		
+		driver.findElement(By.name("cusid")).sendKeys(customerID);
+		driver.findElement(By.name("AccSubmit")).click();
+		
+		//Verify value at Edit customer page matching with value at New Customer
+
+		Assert.assertEquals(driver.findElement(nameBy).getAttribute("value"), name);
+		Assert.assertEquals(driver.findElement(dobBy).getAttribute("value"), dobOutput);
+		Assert.assertEquals(driver.findElement(addressBy).getText(), address);
+		Assert.assertEquals(driver.findElement(cityBy).getAttribute("value"), city);
+		Assert.assertEquals(driver.findElement(stateBy).getAttribute("value"), state);
+		Assert.assertEquals(driver.findElement(pinBy).getAttribute("value"), pin);
+		Assert.assertEquals(driver.findElement(By.xpath("//td[text()='Mobile No.']/following-sibling::td")).getText(), "3123456788");
+		Assert.assertEquals(driver.findElement(By.xpath("//td[text()='Email']/following-sibling::td")).getText(), "donald@gitbub.io");
+		
+		
+		
 		
 	}
 	
