@@ -28,29 +28,28 @@ public class Topic_04_WebDriver_Command {
 		driver.get("https://www.facebook.com/");//**
 		
 		//Cac ham tuong tac len trin duyet/element -> kieu tra ve cua ham la void
-		// cÃ¡c hÃ m mÃ  láº¥y dá»¯ liá»‡u thÃ¬ sáº½ cÃ³ kiá»ƒu tráº£ vá»� chá»©a dá»¯ liá»‡u dÃ³( string/int/boolean)
-		
-		//Láº¥y ra url cá»§a page hiá»‡n táº¡i 
+		// các hàm mà lấy ra dữ liệu thì sẽ có kiểu trả về chứa dữ liệu đó(String/int/boolean)
+		//Lấy ra cái URL của page hiện tại
 		String loginPageUrl = driver.getCurrentUrl();//**
 		//loginPageUrl = https://www.facebook.com/
 		Assert.assertEquals(loginPageUrl, "https://facebook.com/");
 		Assert.assertEquals(driver.getCurrentUrl(), "facebook.com/");//neu chi dung 1 step
 		
-		//láº¥y HTML code cá»§a page hiá»‡n táº¡i
+		//lấy HTML code của page hiện tại
 		driver.getPageSource();
 		
-		//láº¥y ra title cá»§a page hiá»‡n táº¡i
+		//Lấy ra title của page hiện tại
 		driver.getTitle();//**
 		Assert.assertEquals(driver.getTitle(), "Facebook - Ä�Äƒng nháº­p hoáº·c Ä‘Äƒng kÃ½");
 		//facebook- Ä‘Äƒng nháº­p hoáº·c Ä‘Äƒng kÃ­
 		
-		//láº¥y ra GUID  cá»§a tab hiá»‡n táº¡i
+		//lấy ra GUID  của tab  hiện tại
 		driver.getWindowHandle();//**
-		// láº¥y ra GUID cá»§a all tab Ä‘ang cÃ³
+		// Lây rra cái GUID của all tab/window đang có
 		driver.getWindowHandles();//**
-		//chá»� cho element Ä‘c load thÃ nh cÃ´ng trong vÃ²ng 15s
+		//chờ cho các element được loaad thành công trong vòng 15s
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);//**
-	   //chá»� cho page Ä‘Æ°á»£c load thÃ nh cÃ´ng
+	   //chờ cho page được load thành công
 		driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
 		// JS Executor
 		driver.manage().timeouts().setScriptTimeout(15, TimeUnit.SECONDS);
@@ -61,13 +60,13 @@ public class Topic_04_WebDriver_Command {
 		driver.manage().window().maximize();//**
 		//Responsive
 	   //driver .manage().window().setSize(arg0);
-		//Back láº¡i page trÆ°á»›c
+		//Back lại page trước
 		driver.navigate().back();
-		//forward tá»›i page trc Ä‘Ã³
+		//forward tới page trước
 		driver.navigate().forward();
 		
 		
-		//táº£i láº¡i trang
+		//tải lại trang
 		driver.navigate().refresh();
 		
 		driver.navigate().to("https://facebook.com/");
