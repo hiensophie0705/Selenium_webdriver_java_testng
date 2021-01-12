@@ -119,6 +119,8 @@ public class Topic_05_Web_Element_Command {
 		driver.findElement(javaLanguageCheckboxBy).click();
 		Thread.sleep(3000);
 		}
+	//clickToElement(ageUnder1Radio): cach rut gon
+	//clickToElement(javaLanguageCheckboxBy)
 	
 	@Test
 	public void TC_5_Validate_Register_Form() throws InterruptedException {

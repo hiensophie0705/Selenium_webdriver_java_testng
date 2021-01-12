@@ -1,5 +1,6 @@
 package webdriver;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
@@ -21,15 +22,15 @@ public class Topic_10_Alert {
 	String username = "admin";
 	String password = "admin";
 	String project_location = System.getProperty("user.dir");
-	String firefoxAuthenFile = project_location +"D:\\Automation testing\\02- Selenium API\\Selenium_webdriver_java_testng\r\n" ;
+	String firefoxAuthenFile = project_location + "\\autoIT\\authen_firefox.exe" ;
 	
 	@BeforeClass
 	public void beforeClass() {
 		driver = new FirefoxDriver();
 		
-		explicitWait = new WebDriverWait(driver, 30);// chờ trạng thái của Element, ví dụ chờ hiển thị hay không hiển thị, chờ đc click hay chưa
+		explicitWait = new WebDriverWait(driver, 30);// chá»� tráº¡ng thÃ¡i cá»§a Element, vÃ­ dá»¥ chá»� hiá»ƒn thá»‹ hay khÃ´ng hiá»ƒn thá»‹, chá»� Ä‘c click hay chÆ°a
 		
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);// chờ cho việc tìm Element
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);// chá»� cho viá»‡c tÃ¬m Element
 		 
 	}
 	
@@ -39,10 +40,10 @@ public class Topic_10_Alert {
 		
 		 driver.findElement(By.xpath("//button[text()='Click for JS Alert']")).click();
 		 
-		 //chờ cho alert được xuất hiện
+		 //chá»� cho alert Ä‘Æ°á»£c xuáº¥t hiá»‡n
 		 explicitWait.until(ExpectedConditions.alertIsPresent());
 		 
-		 //Switch vào Alert
+		 //Switch vào alert
 		 alert = driver.switchTo().alert();
 		 sleepInSecond(3);
 		 //Get text
@@ -114,18 +115,14 @@ public class Topic_10_Alert {
 		System.out.println(basicAuthenLink);
 		driver.get(getAuthenticationUrl(basicAuthenLink, username, password));
 		Assert.assertTrue(driver.findElement(By.xpath("//p[contains(text(), 'Congratulations! You must have the proper credentials.')]")).isDisplayed());
-
-		//input: http://the-internet.herokuapp.com/
-		//Output: http://admin:admin@the-internet.herokuapp.com/basic_auth
+		
 	}
 	
 	public String getAuthenticationUrl(String oldUrl, String userName, String password) {
 		String newUrl = null;
 		
 		String urlValue[] = oldUrl.split("//");
-		//http:
-		//the-internet.herokuapp.com/basic_auth
-		
+
 		newUrl = urlValue[0] + "//" + userName + ":" + password +"@" + urlValue[1];
 		
 		
@@ -134,12 +131,12 @@ public class Topic_10_Alert {
 	}
 	
 	@Test
-	public void TC_06_Authentication_Alert() {
-	
+	public void TC_06_Authentication_Alert() throws IOException {
+		Runtime.getRuntime().exec(new String[] { firefoxAuthenFile, username, password });
 		driver.get("http://the-internet.herokuapp.com/basic_auth");
-		explicitWait.until(ExpectedConditions.alertIsPresent());
-	    Runtime.getRuntime().exec(new String[] { firefoxAuthen, username, password });
+		Assert.assertTrue(driver.findElement(By.xpath("//p[contains(text(), 'Congratulations! You must have the proper credentials.')]")).isDisplayed());
 	}
+	
 	@AfterClass
 	public void afterClass() {
 		driver.quit();

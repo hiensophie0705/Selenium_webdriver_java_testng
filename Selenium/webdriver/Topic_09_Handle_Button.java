@@ -2,6 +2,7 @@ package webdriver;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -22,7 +23,7 @@ public class Topic_09_Handle_Button {
 			driver.findElement(By.cssSelector(".popup-login-tab-login")).click();
 			
 			//Disdsable field
-			Assert.assertFalse(isElementEnabled(loginButton));
+			Assert.assertFalse((boolean) isElementEnabled(loginButton));
 			
 			driver.findElement(loginUsername).sendKeys("dobaba@gmail.com");
 			driver.findElement(loginPassword).sendKeys("123456");
@@ -30,9 +31,17 @@ public class Topic_09_Handle_Button {
 			sleepInSecond(2);
 			
 			//Enable field
-			Asser.assertTrue(isElementEnabled(loginButton));
+			Assert.assertTrue(isElementEnabled(loginButton));
 			
 			driver.navigate().refresh();
+			driver.findElement(By.cssSelector(".popup-login-tab-login")).click();
+			removeDisabledAttributeByJS(loginButton);
+			sleepInSecond(5);
+			
+		}
+		private Object isElementEnabled(By loginButton2) {
+			// TODO Auto-generated method stub
+			return null;
 		}
 		@Test
 		public void TC_02(){
