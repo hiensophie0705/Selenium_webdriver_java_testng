@@ -18,6 +18,10 @@ public class Topic_10_Alert {
 	Alert alert;
 	WebDriverWait explicitWait;
 	By resultText = By.xpath("//p[@id='result']");
+	String username = "admin";
+	String password = "admin";
+	String project_location = System.getProperty("user.dir");
+	String firefoxAuthenFile = project_location +"D:\\Automation testing\\02- Selenium API\\Selenium_webdriver_java_testng\r\n" ;
 	
 	@BeforeClass
 	public void beforeClass() {
@@ -99,9 +103,43 @@ public class Topic_10_Alert {
 	
 	@Test
 	public void TC_04_Authentication_Alert() {
+		driver.get("http://" + username + ":" + password +"@" +"http://the-internet.herokuapp.com/basic_auth");
+		Assert.assertTrue(driver.findElement(By.xpath("//p[contains(text(), 'Congratulations! You must have the proper credentials.')]")).isDisplayed());
+	}
+	
+	@Test
+	public void TC_05_Authentication_Alert() {
+		driver.get("http://the-internet.herokuapp.com/");
+		String basicAuthenLink = driver.findElement(By.xpath("//a[text()='Basic Auth']")).getAttribute("href");
+		System.out.println(basicAuthenLink);
+		driver.get(getAuthenticationUrl(basicAuthenLink, username, password));
+		Assert.assertTrue(driver.findElement(By.xpath("//p[contains(text(), 'Congratulations! You must have the proper credentials.')]")).isDisplayed());
+
+		//input: http://the-internet.herokuapp.com/
+		//Output: http://admin:admin@the-internet.herokuapp.com/basic_auth
+	}
+	
+	public String getAuthenticationUrl(String oldUrl, String userName, String password) {
+		String newUrl = null;
+		
+		String urlValue[] = oldUrl.split("//");
+		//http:
+		//the-internet.herokuapp.com/basic_auth
+		
+		newUrl = urlValue[0] + "//" + userName + ":" + password +"@" + urlValue[1];
+		
+		
+		return newUrl;
 		
 	}
 	
+	@Test
+	public void TC_06_Authentication_Alert() {
+	
+		driver.get("http://the-internet.herokuapp.com/basic_auth");
+		explicitWait.until(ExpectedConditions.alertIsPresent());
+	    Runtime.getRuntime().exec(new String[] { firefoxAuthen, username, password });
+	}
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
