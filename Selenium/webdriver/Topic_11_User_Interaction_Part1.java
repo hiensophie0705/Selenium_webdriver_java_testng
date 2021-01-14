@@ -2,27 +2,23 @@ package webdriver;
 
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_01_template {
+public class Topic_11_User_Interaction_Part1 {
 	WebDriver driver;
 
 	@BeforeClass
 	public void beforeClass() {
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		driver.get("");
-	}
+		}
 
 	@Test
-	public void TC_01() {
+	public void TC_01_Hover_mouse() {
 		driver.get("");
 	}
 
@@ -44,4 +40,5 @@ public class Topic_01_template {
 		driver.quit();
 	}
 
+}
 }
