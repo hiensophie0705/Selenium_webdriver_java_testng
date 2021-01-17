@@ -1,43 +1,58 @@
 package javaForTest;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class Topic_01_Data_Type {
 	public static void main(String[] args) {
-		//Kiá»ƒu dá»¯ liÃªu: data type
-		//1- Kiá»ƒu dá»¯ liá»‡u nguyÃªn thuá»·(primitive)
+		//Kiểu dữ liệu kí tự
+		char a = 'A';
 		
-		//kÃ­ tá»±
-        //char
-		// Char key = 'A';
-	    //Sá»‘ nguyÃªn: khÃ´ng cÃ³ pháº§n tháº­p phÃ¢n
-		//short
-		//byte
-		 //byte 
-		 
-		//int
-		//long
+		//Kiểu dữ liệu số nguyên (dương/âm)
+		byte first_num = -15;
+		short second_num = 15456;
+		int third_num = 46883;
+		long fourth_num = 652365;
 		
-		//sá»‘ thá»±c: cÃ³ pháº§n tháº­p phÃ¢n
-		//float
-		//double
+		//Kiểu dữ liệu số thực
+		float fifth_num = 145.69F;
+		double six_num = 3482.44D;
 		
-		//boolean- 2 giÃ¡ trá»‹: true/false
-		//sex= true: nam; false: ná»¯
+		//Kiểu dữ liệu booleam(true/false)
+		boolean status = true;
+		status = false;
 		
-		//2- Kiểu dữ lệu tham chiếu(reference)
-		//String
-		 
-		//Array
-		 //String address[] = {"Ho Chi Minh","Ha Noi","Da Nang"};
-		 //int numbers[] = {12, 25,32};
-		 //Class
-		 //Topic_01_Data_Type topic01 =new Topic_01_Data_Type();
-		 
-		//Object
-		 //Oject a = "Can tho";
-		 
-		//Collection(Set/List/QuÃªue)
-         //List<String> add = new  Array		 
+		//Kiểu dữ liệu chuỗi(số, chữ, đặc biệt..)
+		String fullName = "Nguyen Van A";
 		
+		//Kiểu Array(cố định)
+		String[] addresses = {"Ha Noi", "Ho Chi Minh", "Da Nang"};
+		int[] prices = {20000, 50000, 100000};
+		
+		//Kiểu Class
+		Topic_03_Data_Types topic_03 = new Topic_03_Data_Types();
+		
+		//Kiểu object(javascript executor)
+		
+		//Kiểu collection(ArrayList/HashMap)
+		//Chứa trùng
+		List<String> address = new ArrayList<String>();
+		address.add("Ho Chi Minh");
+		address.add("Ha Noi");
+		address.add("Da Nang");
+		address.add("Da Nang");
+		
+		//Không chứa trùng
+		Set<String> add = new HashSet<String>();
+		add.add("Ho Chi Minh");
+		add.add("Ha Noi");
+		add.add("Da Nang");
+		add.add("Da Nang");
+
 	}
+	
+	
 
 }
