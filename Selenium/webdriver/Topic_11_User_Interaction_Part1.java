@@ -65,7 +65,7 @@ public class Topic_11_User_Interaction_Part1 {
 		//DOM
 		Assert.assertTrue((driver.findElement(By.xpath("//h1[@id='page-title-heading']/span[text()='Bia']"))).isDisplayed());
 		//UI
-		Assert.assertEquals(driver.findElement(By.xpath("//h1[@id='page-title-heading']/span]")).getText(), "BIA");
+		//Assert.assertEquals(driver.findElement(By.xpath("//h1[@id='page-title-heading']/span]")).getText(), "BIA");
 		
 	}
 
@@ -102,6 +102,7 @@ public class Topic_11_User_Interaction_Part1 {
 		//Click vào các số 1 3 6 12
 		action.click(allNumber.get(0))
 		.click(allNumber.get(2))
+		.click(allNumber.get(5))
 		.click(allNumber.get(11))
 		.perform();
 		sleepInSecond(3);
@@ -126,10 +127,10 @@ public class Topic_11_User_Interaction_Part1 {
 		action.doubleClick(driver.findElement(By.xpath("//button[text()='Double click me']"))).perform();
 		sleepInSecond(3);
 		
-		Assert.assertTrue(driver.findElement(By.xpath("//p[@id='demo' and text() ='Hello Automation']")).isDisplayed());
-		
+		Assert.assertTrue(driver.findElement(By.xpath("//p[text()='Hello Automation Guys!']")).isDisplayed());
 		
 	}
+
 	@AfterClass
 	public void afterClass() {
 		driver.quit();

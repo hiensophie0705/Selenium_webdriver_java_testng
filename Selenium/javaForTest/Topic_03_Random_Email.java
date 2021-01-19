@@ -2,7 +2,7 @@ package javaForTest;
 
 import java.util.Random;
 
-public class Random_Email {
+public class Topic_03_Random_Email {
 	public static void main(String[] args) {
 		
 		//java class

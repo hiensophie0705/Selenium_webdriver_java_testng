@@ -32,7 +32,7 @@ public class Topic_01_Data_Type {
 		int[] prices = {20000, 50000, 100000};
 		
 		//Kiểu Class
-		Topic_03_Data_Types topic_03 = new Topic_03_Data_Types();
+		//Topic_03_Data_Types topic_03 = new Topic_03_Data_Types();
 		
 		//Kiểu object(javascript executor)
 		

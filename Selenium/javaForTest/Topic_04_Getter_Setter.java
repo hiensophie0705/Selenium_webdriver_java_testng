@@ -1,11 +1,11 @@
 package javaForTest;
 
-public class Getter_Setter {
+public class Topic_04_Getter_Setter {
 	String carName;//biến toàn cục
 	
 	public static void main(String[] args) {
 		//todo auto-generated method stub
-		Getter_Setter topic = new Getter_Setter();
+		Topic_04_Getter_Setter topic = new Topic_04_Getter_Setter();
 		
 		topic.setCarName("toyota camry");
 		System.out.println(topic.getCarName());

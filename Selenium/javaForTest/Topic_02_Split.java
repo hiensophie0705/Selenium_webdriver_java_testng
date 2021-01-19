@@ -1,6 +1,6 @@
 package javaForTest;
 
-public class Split {
+public class Topic_02_Split {
 	public static void main(String[] args) {
 		String oldUrl = "http://the-internet.herokuapp.com/basic_auth";
 		
