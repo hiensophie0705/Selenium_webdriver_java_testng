@@ -40,7 +40,7 @@ public class Topic_10_Alert {
 		
 		 driver.findElement(By.xpath("//button[text()='Click for JS Alert']")).click();
 		 
-		 //chá»� cho alert Ä‘Æ°á»£c xuáº¥t hiá»‡n
+		 //chờ cho alert Ä‘Æ°á»£c xuất hiện
 		 explicitWait.until(ExpectedConditions.alertIsPresent());
 		 
 		 //Switch vào alert
