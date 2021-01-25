@@ -52,6 +52,12 @@ public class Topic_13_Popup {
 		driver.findElement(By.xpath("//input[@value='JOIN WITH US']")).click();
 		driver.findElement(By.xpath("//img[@alt='Close']")).click();
 		
+		Thread.sleep(3000);
+		
+		//Chờ cho 1 element có thể click được hay không
+		 explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@alt='Close']")));
+		 driver.findElement(By.xpath("//img[@alt='Close']")).click();
+		 
 		//Chờ cho 1 element không còn hiển thị
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@id='sgpb-popup-dialog-main-div']")));
 		Assert.assertFalse(driver.findElement(By.xpath("//div[@id='sgpb-popup-dialog-main-div']")).isDisplayed());
@@ -61,13 +67,36 @@ public class Topic_13_Popup {
 	
 	@Test
 	public void TC_03_Random_Popup_In_DOM() {
+		//step 1
+		driver.get("https://blog.testproject.io/");
+		sleepInSecond(7);
+		//step 2
+		//(Có xuất hiện - đóng popup đi)- chuyển qua step tiếp theo
+		//(Không xuất hiện)- qua step tiếp theo
+		if(driver.findElement(By.xpath("//div[@class='mailch-wrap rocket-lazyload']")).isDisplayed());{
+		//Chờ cho 1 element có thể click được hay không
+		 explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@alt='Close']")));
+		 driver.findElement(By.xpath("//img[@alt='close-mailch']")).click();
+		}
+		//step 3
+
+	   //Chờ cho 1 element được hiển thị
+		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//section//input[@class='search-field']")));
+		driver.findElement(By.xpath("//section//input[@class='search-field']")).sendKeys("Selenium");
+		
+		explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//section//span[@class='glass]")));
+
+		driver.findElement(By.xpath("//section//span[@class='glass']")).click();
+		
+		sleepInSecond(5);
+		
+	}
+	@Test
+	public void TC_03_Random_Popup_In_DOM() {
 		
 	}
 	
-	@Test
-	public void TC_03_Random_Popup_Not_In_DOM() {
-		
-	}
+	
 	
 	
 	@AfterClass
