@@ -1,9 +1,11 @@
 package webdriver;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -44,7 +46,7 @@ public class Topic_13_Popup {
 
 	}
 	@Test
-	public void TC_02_Fixed_Popup() {
+	public void TC_02_Fixed_Popup() throws InterruptedException {
 		driver.get("https://bni.vn/");
 		
 		//Chờ cho 1 element được hiển thị
@@ -70,6 +72,7 @@ public class Topic_13_Popup {
 		//step 1
 		driver.get("https://blog.testproject.io/");
 		sleepInSecond(7);
+		
 		//step 2
 		//(Có xuất hiện - đóng popup đi)- chuyển qua step tiếp theo
 		//(Không xuất hiện)- qua step tiếp theo
@@ -78,6 +81,7 @@ public class Topic_13_Popup {
 		 explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@alt='Close']")));
 		 driver.findElement(By.xpath("//img[@alt='close-mailch']")).click();
 		}
+		
 		//step 3
 
 	   //Chờ cho 1 element được hiển thị
@@ -92,8 +96,22 @@ public class Topic_13_Popup {
 		
 	}
 	@Test
-	public void TC_03_Random_Popup_In_DOM() {
+	public void TC_04_Random_Popup_Not_In_DOM() {
+		//Step 1
+		driver.get("https://shopee.vn");
 		
+		sleepInSecond(7);
+		
+		List<WebElement> popup = driver.findElements(By.xpath("img[@alt='home_popup_banner']"));
+		
+		if(popup.size() > 0 && popup.get(0).isDisplayed()) {
+			System.out.println("Đóng popup");
+			explicitWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".shopee-popup_close-btn")));
+			driver.findElement(By.cssSelector(".shopee-popup_close-btn")).click();
+			}else {
+				System.out.println("Popup không xuất hiện");
+				
+			}
 	}
 	
 	
