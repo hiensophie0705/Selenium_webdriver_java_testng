@@ -54,7 +54,7 @@ public class Topic_13_Popup {
 		driver.findElement(By.xpath("//input[@value='JOIN WITH US']")).click();
 		driver.findElement(By.xpath("//img[@alt='Close']")).click();
 		
-		Thread.sleep(3000);
+		sleepInSecond(3);
 		
 		//Chờ cho 1 element có thể click được hay không
 		 explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@alt='Close']")));
@@ -80,10 +80,10 @@ public class Topic_13_Popup {
 		//Chờ cho 1 element có thể click được hay không
 		 explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@alt='Close']")));
 		 driver.findElement(By.xpath("//img[@alt='close-mailch']")).click();
+		 sleepInSecond(2);
 		}
 		
 		//step 3
-
 	   //Chờ cho 1 element được hiển thị
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//section//input[@class='search-field']")));
 		driver.findElement(By.xpath("//section//input[@class='search-field']")).sendKeys("Selenium");
