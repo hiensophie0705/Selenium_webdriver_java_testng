@@ -29,43 +29,41 @@ public class Topic_14_Iframe_Frame {
 		driver.manage().window().maximize();
 	}
 
-//	@Test
-//	public void TC_01_Iframe() {
-//		driver.get("https://automationfc.com/2020/02/18/training-online-automation-testing/");
-//		
-//		//switch vào iframe của Facebook
-//		driver.switchTo().frame(driver.findElement(By.xpath("//aside[@id='text-14']//strong")));
-//		
-//		Assert.assertEquals(driver.findElement(By.xpath("//a[@title='Automation FC']")).getText(), "Automation FC");
-//		
-//		String likeText = driver.findElement(By.xpath("//a[@title='Automation FC']/parent::div/following-sibling::div")).getText();
-//		int likeNumber = Integer.parseInt(likeText.split(" ")[0].replace(",", ""));
-//		System.out.println(likeNumber);
-//		
-//		 assertThat(likeNumber, greaterThan(2000));
-//		 
-//		 //Switch to Top Window
-//		 driver.switchTo().defaultContent();
-//		 
-//		 Assert.assertEquals(driver.findElement(By.className("//h1[@class='post-title']")).getText(), "[Training Online] – Fullstack Selenium WebDriver Framework in Java (Livestream)");
-//		 
-//		 //Switch to Google doc iframe
-//		 driver.switchTo().frame(driver.findElement(By.xpath("//iframe[contains(@src,'docs.google.com')]")));
-//		 
-//		 Assert.assertEquals(driver.findElement(By.cssSelector(".exportFormTitle")).getText(), "KHÓA HỌC SELENIUM AUTOMATION TESTING");
-//		 
-//	
-//	}
+	@Test
+	public void TC_01_Iframe() {
+		driver.get("https://automationfc.com/2020/02/18/training-online-automation-testing/");
+		
+		//switch vào iframe của Facebook
+		driver.switchTo().frame(driver.findElement(By.xpath("//aside[@id='text-14']//strong")));
+		
+		Assert.assertEquals(driver.findElement(By.xpath("//a[@title='Automation FC']")).getText(), "Automation FC");
+		
+		String likeText = driver.findElement(By.xpath("//a[@title='Automation FC']/parent::div/following-sibling::div")).getText();
+		int likeNumber = Integer.parseInt(likeText.split(" ")[0].replace(",", ""));
+		System.out.println(likeNumber);
+		
+		 assertThat(likeNumber, greaterThan(2000));
+		 
+		 //Switch to Top Window
+		 driver.switchTo().defaultContent();
+		 
+		 Assert.assertEquals(driver.findElement(By.className("//h1[@class='post-title']")).getText(), "[Training Online] – Fullstack Selenium WebDriver Framework in Java (Livestream)");
+		 
+		 //Switch to Google doc iframe
+		 driver.switchTo().frame(driver.findElement(By.xpath("//iframe[contains(@src,'docs.google.com')]")));
+		 
+		 Assert.assertEquals(driver.findElement(By.cssSelector(".exportFormTitle")).getText(), "KHÓA HỌC SELENIUM AUTOMATION TESTING");
+		 
+	
+	}
 
 	@Test
 	public void TC_02_Iframe() {
 		driver.get("https://kyna.vn");
 		
-		//click button
-		driver.findElement(By.xpath("//div[@class='border_overlay meshim_widget_widgets_BorderOverlay'")).click();
-		
+	
 		//Switch Chat iframe
-		driver.switchTo().frame(driver.findElement(By.xpath("//div[@class='container']")));
+		driver.switchTo().frame(driver.findElement(By.xpath("//div[@class='border_overlay meshim_widget_widgets_BorderOverlay']")));
 		
 		driver.findElement(By.xpath("//input[@placeholder='Nhập tên của bạn']")).sendKeys("Đỗ Hiên");
 		driver.findElement(By.xpath("//input[@placeholder='Nhập số điện thoại của bạn']")).sendKeys("0389996064");
