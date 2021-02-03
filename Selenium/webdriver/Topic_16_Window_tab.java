@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -13,6 +14,7 @@ import org.testng.annotations.Test;
 
 public class Topic_16_Window_tab {
 	WebDriver driver;
+	private Object explicitWait;
 
 	@BeforeClass
 	public void beforeClass() {
@@ -111,6 +113,14 @@ public class Topic_16_Window_tab {
 		Assert.assertEquals(driver.findElement(By.xpath("//h2[@class='product-name']/a")).getSize(), 2);
 		closeAllWindowExceptParent(parentID);
 		sleepInSecond(2);
+		
+		//click Clear All link và accept alert
+		driver.findElement(By.xpath("//a[text()='Clear All']")).click();
+		explicitWait.until(ExpectedConditions.alertIsPresent());
+		driver.switchTo().alert().accept();
+		
+		//Verify message xuất hiện
+		Assert.assertTrue(driver.findElement(By.xpath("//li[@class='success-msg']//span[text()='The comparison list was cleared.']")).isDisplayed());
 		
 		driver.findElement(By.xpath("//input[@id='search']")).sendKeys("Sony Xperia");
 		driver.findElement(By.xpath("//button[@title='Search']")).click();
