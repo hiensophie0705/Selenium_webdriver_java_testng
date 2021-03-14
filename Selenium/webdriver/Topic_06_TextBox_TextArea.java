@@ -1,5 +1,6 @@
 package webdriver;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -36,7 +37,7 @@ public class Topic_06_TextBox_TextArea {
 		driver.manage().window().maximize();
 		driver.get("http://demo.guru99.com/v4");
 		
-		email = "dobaba1997@gmail.com";
+		email = "Testing@github.io";
 		name = "dobaba";
 		dobInput = "07/05/1997";
 		dobOutput = "1997-07-05";
@@ -45,7 +46,7 @@ public class Topic_06_TextBox_TextArea {
 		state = "Viet Nam";
 		pin = "123456";
 		phone = "0123456789";
-		mail = "dobaba1997@gmail.com";
+		mail = generateEmail();
 		password = "123456";
 		loginPageUrl = driver.getCurrentUrl();
 		
@@ -172,7 +173,10 @@ public class Topic_06_TextBox_TextArea {
 	public void afterClass() {
 		driver.quit();
 	}
-
+	public String generateEmail() {
+		Random rand = new Random();
+		return "Testing" + rand.nextInt(9999) + "@github.io";
+	}
 	public boolean isElementEnabled(By by) {
 		WebElement element = driver.findElement(by);
 		if (element.isEnabled()) {

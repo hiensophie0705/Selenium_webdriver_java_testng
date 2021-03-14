@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Tiki" parallel="tests" thread-count="2">
+	
+	<suite-files>
+		<suite-file path="runOnAPI.xml" />
+		<suite-file path="runOnMobileApp.xml" />
+		<suite-file path="runOnWebApp.xml" />
+	</suite-files>
+</suite>
