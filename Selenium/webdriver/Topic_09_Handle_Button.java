@@ -3,13 +3,13 @@ package webdriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 public class Topic_09_Handle_Button {
 		WebDriver webdriver;
 		By loginButton = By.cssSelector(".fhs-btn-login");
-		By loginPassword = By.cssSelector(".)
+		By loginPassword = By.cssSelector("");
 		public void beforeClass() {
 			
 		
@@ -61,4 +61,16 @@ public class Topic_09_Handle_Button {
 		}
 
 	}
+		private void sleepInSecond(int i) {
+			// TODO Auto-generated method stub
+			
+		}
+		private void removeDisabledAttributeByJS(By loginButton2) {
+			// TODO Auto-generated method stub
+			
+		}
+		private boolean isElementEnabled(By loginButton2) {
+			// TODO Auto-generated method stub
+			return false;
+		}
 }
