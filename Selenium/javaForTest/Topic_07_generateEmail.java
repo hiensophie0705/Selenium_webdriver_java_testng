@@ -1,5 +1,7 @@
 package javaForTest;
 
+import java.util.Random;
+
 public class Topic_07_generateEmail {
 
 	public String generateEmail() {
@@ -7,4 +9,4 @@ public class Topic_07_generateEmail {
 		return "donald" + rand.nextInt(9999) + "@github.io";
 	}
 	}
-}
+
